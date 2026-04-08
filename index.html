@@ -12,14 +12,14 @@
   --red:#e74c3c;--amber:#e67e22;--green:#1d9e75;
   --on-navy:#dde5ef;--muted:#8fa3ba;
 }
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d1f3c;margin:0;padding:0;min-height:100vh}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--navy);margin:0;padding:0;min-height:100vh}
 #app{max-width:720px;margin:0 auto;padding:2rem 1rem}
 .screen{display:none}
 .screen.active{display:block;animation:fi .3s ease}
 @keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
 /* LANDING */
-.hero{background:var(--navy);border-radius:16px;padding:3rem 2.5rem 2.5rem;position:relative;overflow:hidden}
+.hero{background:var(--navy2);border-radius:16px;padding:3rem 2.5rem 2.5rem;position:relative;overflow:hidden;border:1px solid rgba(201,169,110,.15)}
 .hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold))}
 .badge{display:inline-flex;align-items:center;gap:7px;background:rgba(201,169,110,.12);border:1px solid rgba(201,169,110,.3);border-radius:20px;padding:5px 14px;font-size:12px;color:var(--gold);letter-spacing:.05em;text-transform:uppercase;margin-bottom:1.5rem}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 1.5s infinite}
@@ -37,29 +37,29 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .hero-note{font-size:12px;color:var(--muted);margin-top:10px}
 
 /* QUESTION */
-.q-wrap{border-radius:16px;overflow:hidden;border:1px solid rgba(13,31,60,.14)}
-.q-prog{background:#fff;border-bottom:1px solid rgba(13,31,60,.08);padding:1rem 1.5rem .75rem}
+.q-wrap{border-radius:16px;overflow:hidden;border:1px solid rgba(201,169,110,.15)}
+.q-prog{background:var(--navy2);border-bottom:1px solid rgba(201,169,110,.1);padding:1rem 1.5rem .75rem}
 .q-prog-top{display:flex;justify-content:space-between;margin-bottom:8px}
-.q-prog-lbl{font-size:12px;color:#888;text-transform:uppercase;letter-spacing:.06em}
-.q-prog-n{font-size:12px;font-weight:700;color:var(--navy)}
-.q-track{height:4px;background:rgba(13,31,60,.1);border-radius:4px;overflow:hidden}
+.q-prog-lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.q-prog-n{font-size:12px;font-weight:700;color:var(--gold)}
+.q-track{height:4px;background:rgba(201,169,110,.15);border-radius:4px;overflow:hidden}
 .q-fill{height:100%;background:var(--gold);border-radius:4px;transition:width .4s ease}
 .q-head{background:var(--navy);padding:2rem 1.5rem 1.5rem}
 .q-cat{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
 .q-text{font-size:20px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:6px}
 .q-sub{font-size:13px;color:var(--muted);line-height:1.55}
-.q-opts{background:#f7f6f3;padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:9px}
-.opt{background:#fff;border:1.5px solid rgba(13,31,60,.1);border-radius:10px;padding:13px 15px;cursor:pointer;text-align:left;display:flex;align-items:center;gap:12px;transition:all .18s}
-.opt:hover{border-color:var(--gold);background:rgba(201,169,110,.05)}
-.opt.sel{border-color:var(--gold);background:rgba(201,169,110,.09)}
-.opt-radio{width:18px;height:18px;border-radius:50%;border:2px solid rgba(13,31,60,.18);flex-shrink:0;transition:all .18s}
+.q-opts{background:var(--navy2);padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:9px}
+.opt{background:rgba(255,255,255,.04);border:1.5px solid rgba(201,169,110,.15);border-radius:10px;padding:13px 15px;cursor:pointer;text-align:left;display:flex;align-items:center;gap:12px;transition:all .18s}
+.opt:hover{border-color:var(--gold);background:rgba(201,169,110,.08)}
+.opt.sel{border-color:var(--gold);background:rgba(201,169,110,.12)}
+.opt-radio{width:18px;height:18px;border-radius:50%;border:2px solid rgba(201,169,110,.3);flex-shrink:0;transition:all .18s}
 .opt:hover .opt-radio{border-color:var(--gold)}
 .opt.sel .opt-radio{border-color:var(--gold);background:var(--gold)}
-.opt-t{font-size:14px;font-weight:600;color:#111}
-.opt-s{font-size:12px;color:#666;margin-top:2px;line-height:1.4}
+.opt-t{font-size:14px;font-weight:600;color:#fff}
+.opt-s{font-size:12px;color:var(--muted);margin-top:2px;line-height:1.4}
 
 /* PROCESSING */
-.processing{background:var(--navy);border-radius:16px;padding:4rem 2rem;text-align:center}
+.processing{background:var(--navy2);border-radius:16px;padding:4rem 2rem;text-align:center;border:1px solid rgba(201,169,110,.15)}
 .spinner{width:56px;height:56px;margin:0 auto 2rem;border:3px solid rgba(201,169,110,.15);border-top:3px solid var(--gold);border-radius:50%;animation:spin 1s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .processing h2{font-size:19px;font-weight:800;color:#fff;margin-bottom:6px}
@@ -71,7 +71,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .proc-steps li.done::before{content:'✓ '}
 
 /* RESULTS */
-.res-top{background:var(--navy);border-radius:16px 16px 0 0;padding:2rem;position:relative;overflow:hidden}
+.res-top{background:var(--navy2);border-radius:16px 16px 0 0;padding:2rem;position:relative;overflow:hidden;border:1px solid rgba(201,169,110,.15);border-bottom:none}
 .res-top::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold))}
 .res-row{display:flex;align-items:center;gap:2rem}
 .score-ring{width:100px;height:100px;border-radius:50%;flex-shrink:0;border:4px solid;display:flex;flex-direction:column;align-items:center;justify-content:center}
@@ -83,30 +83,38 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .rl{border-color:var(--green);color:var(--green)}
 .res-sum h2{font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
 .res-sum p{font-size:13px;color:var(--on-navy);line-height:1.6}
-.res-body{background:#f7f6f3;border-radius:0 0 16px 16px;padding:1.5rem;border:1px solid rgba(13,31,60,.1);border-top:none}
-.sec-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#999;margin-bottom:12px}
+.res-body{background:var(--navy2);border-radius:0 0 16px 16px;padding:1.5rem;border:1px solid rgba(201,169,110,.15);border-top:none}
+.sec-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:12px}
 .gap-list{display:flex;flex-direction:column;gap:9px;margin-bottom:1.5rem}
-.gap-item{background:#fff;border-radius:10px;padding:13px 15px;border-left:4px solid;display:flex;gap:11px;align-items:flex-start}
+.gap-item{background:rgba(255,255,255,.04);border-radius:10px;padding:13px 15px;border-left:4px solid;display:flex;gap:11px;align-items:flex-start}
 .gap-item.c{border-color:var(--red)}
 .gap-item.h{border-color:var(--amber)}
 .gap-item.m{border-color:#d4ac17}
 .gap-ico{font-size:15px;flex-shrink:0;margin-top:1px}
-.gap-t{font-size:14px;font-weight:700;color:#111;margin-bottom:3px}
-.gap-d{font-size:12px;color:#555;line-height:1.55}
-.divider{height:1px;background:rgba(13,31,60,.09);margin:1.25rem 0}
+.gap-t{font-size:14px;font-weight:700;color:#fff;margin-bottom:3px}
+.gap-d{font-size:12px;color:var(--muted);line-height:1.55}
+.divider{height:1px;background:rgba(201,169,110,.12);margin:1.25rem 0}
+
+/* JURISDICTION BOX */
+.juris-box{background:rgba(201,169,110,.07);border:1px solid rgba(201,169,110,.25);border-radius:10px;padding:14px 16px;margin-bottom:1.5rem}
+.juris-label{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px}
+.juris-case{font-size:13px;color:var(--on-navy);line-height:1.65;margin-bottom:6px}
+.juris-case:last-child{margin-bottom:0}
+.juris-case strong{color:var(--gold2)}
 
 /* CTA */
-.cta-box{background:#fff;border-radius:12px;padding:1.5rem;border:1px solid rgba(13,31,60,.08)}
-.cta-box h3{font-size:17px;font-weight:800;color:var(--navy);margin-bottom:8px}
-.cta-box p{font-size:13px;color:#444;line-height:1.7;margin-bottom:1.25rem}
-.btn-cta{display:block;width:100%;background:var(--navy);color:var(--gold);font-size:15px;font-weight:800;padding:15px;border-radius:8px;border:2px solid var(--gold);cursor:pointer;text-align:center;letter-spacing:.02em;text-decoration:none;transition:all .2s}
-.btn-cta:hover{background:var(--gold);color:var(--navy)}
+.cta-box{background:rgba(255,255,255,.04);border-radius:12px;padding:1.5rem;border:1px solid rgba(201,169,110,.2)}
+.cta-box h3{font-size:17px;font-weight:800;color:#fff;margin-bottom:8px}
+.cta-box p{font-size:13px;color:var(--on-navy);line-height:1.7;margin-bottom:1.25rem}
+.btn-cta{display:block;width:100%;background:var(--gold);color:var(--navy);font-size:15px;font-weight:800;padding:15px;border-radius:8px;border:none;cursor:pointer;text-align:center;letter-spacing:.02em;text-decoration:none;transition:all .2s}
+.btn-cta:hover{background:var(--gold2)}
 .btn-cta:active{transform:scale(.98)}
-.btn-sec{display:block;width:100%;background:transparent;color:#888;font-size:13px;padding:10px;border:1px solid rgba(13,31,60,.1);border-radius:8px;cursor:pointer;text-align:center;margin-top:8px;transition:background .2s}
-.btn-sec:hover{background:rgba(13,31,60,.04)}
-.disclaimer{font-size:11px;color:#aaa;text-align:center;margin-top:1rem;line-height:1.7}
+.btn-sec{display:block;width:100%;background:transparent;color:var(--muted);font-size:13px;padding:10px;border:1px solid rgba(201,169,110,.2);border-radius:8px;cursor:pointer;text-align:center;margin-top:8px;transition:background .2s}
+.btn-sec:hover{background:rgba(255,255,255,.04)}
+.disclaimer{font-size:11px;color:var(--muted);text-align:center;margin-top:1rem;line-height:1.7}
 
 @media(max-width:480px){
+  #app{padding:1rem .75rem}
   .hero{padding:2rem 1.25rem}
   .hero h1{font-size:22px}
   .hero-stats{flex-wrap:wrap;gap:.75rem}
@@ -119,18 +127,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <!-- LANDING -->
 <div id="s-land" class="screen active">
   <div class="hero">
-    <div class="badge"><div class="dot"></div><span id="dcount">117</span> days to enforcement · EU AI Act · 2 August 2026</div>
+    <div class="badge"><div class="dot"></div><span id="dcount">117</span> days to Annex III enforcement · EU AI Act · 2 August 2026</div>
     <h1>Are you personally exposed<br>under the <em>EU AI Act?</em></h1>
-    <p>On 2 August 2026, the EU AI Act's Annex III obligations become enforceable — covering AI in financial services, recruitment, critical infrastructure and healthcare. These are the categories that create conditions for direct personal liability for individual directors under Companies Act 2006 Section 174.</p>
-    <p style="margin-top:10px">Board minutes record collective decisions. They were never designed to record your personal discharge of the duty of care. Answer 10 questions and understand your personal position in under 3 minutes.</p>
+    <p>On 2 August 2026, the EU AI Act's Annex III obligations become enforceable — financial services, recruitment, critical infrastructure, healthcare. These are the categories that create conditions for direct personal liability for individual directors, wherever they are based.</p>
+    <p style="margin-top:10px">Answer 10 questions and understand your personal position in under 3 minutes.</p>
     <div class="hero-stats">
       <div class="stat"><div class="num">€35M</div><div class="lbl">Max corporate fine</div></div>
       <div class="stat"><div class="num">Side A</div><div class="lbl">D&O policies retreating</div></div>
-      <div class="stat"><div class="num">5,200</div><div class="lbl">NEDs &amp; directors exposed</div></div>
+      <div class="stat"><div class="num">4</div><div class="lbl">Jurisdictions assessed</div></div>
       <div class="stat"><div class="num">Aug 2</div><div class="lbl">Enforcement date</div></div>
     </div>
     <button class="btn-start" onclick="go('s-questions');render(0)">Begin my personal assessment →</button>
-    <div class="hero-note">For executive directors, NEDs and board members · Anonymous · No data stored · 2–3 minutes</div>
+    <div class="hero-note">For executive directors, NEDs and board members · UK · US · Australia · Middle East · Anonymous · No data stored · 2–3 minutes</div>
   </div>
 </div>
 
@@ -158,12 +166,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <div class="processing">
     <div class="spinner"></div>
     <h2>Analysing your liability profile…</h2>
-    <p>Cross-referencing EU AI Act Annex III, Companies Act 2006<br>and your personal evidentiary position</p>
+    <p>Cross-referencing EU AI Act Annex III, your jurisdiction's<br>director liability standard, and your personal evidentiary position</p>
     <ul class="proc-steps" id="psteps">
       <li>Mapping sector to Annex III exposure categories</li>
+      <li>Identifying jurisdiction-specific liability standard</li>
       <li>Assessing personal evidentiary position</li>
       <li>Reviewing D&O insurance coverage gaps</li>
-      <li>Calculating derivative claim vulnerability</li>
       <li>Generating your personal risk profile</li>
     </ul>
   </div>
@@ -171,7 +179,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <!-- RESULTS -->
 <div id="s-results" class="screen">
-  <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(13,31,60,.14)">
+  <div style="border-radius:16px;overflow:hidden;">
     <div class="res-top">
       <div class="res-row">
         <div class="score-ring" id="sring"><div class="sn" id="snum">—</div><div class="sl">/ 100</div></div>
@@ -182,13 +190,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="sec-lbl">Your identified exposure gaps</div>
       <div class="gap-list" id="glist"></div>
       <div class="divider"></div>
+      <div class="sec-lbl">Your jurisdiction — applicable legal standard</div>
+      <div class="juris-box" id="juris-box"></div>
+      <div class="divider"></div>
       <div class="cta-box">
         <h3 id="cta-head">A personal briefing is available.</h3>
         <p id="cta-body"></p>
-        <a class="btn-cta" id="cta-link" href="#" target="_blank" rel="noopener">Book a personal briefing →</a>
+        <a class="btn-cta" id="cta-link" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2TbybaflMMCZ2SjKK6GsaBvqLBduaSo0KW2poGgjQbh-qNl-DWrN_9c-i7Ke0w0zuF8Tdn1DMW" target="_blank" rel="noopener">Book a personal briefing →</a>
         <button class="btn-sec" onclick="retake()">Retake the assessment</button>
       </div>
-      <div class="disclaimer">The 2 August 2026 deadline applies to Annex III high-risk AI systems — financial services, recruitment, critical infrastructure and healthcare. AI systems classified as high-risk under Article 6(1) as safety components of Annex I regulated products follow on 2 August 2027.<br><br>This assessment is for general awareness only. It does not constitute legal advice. Consult a qualified solicitor for guidance specific to your personal position.</div>
+      <div class="disclaimer" id="disclaimer"></div>
     </div>
   </div>
 </div>
@@ -197,13 +208,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <script>
 const Qs=[
-  {cat:"Sector Exposure",q:"Which sector does your primary board appointment fall within?",sub:"Your sector determines your EU AI Act Annex III exposure profile.",flag:"sector",
+  {cat:"Sector Exposure",q:"Which sector does your primary board appointment fall within?",sub:"Annex III of the EU AI Act defines the high-risk categories enforceable from 2 August 2026. Your sector determines your exposure profile.",flag:"sector",
    opts:[
     {t:"Financial Services",s:"Credit scoring, insurance pricing, fraud detection",sc:3,v:"finserv"},
     {t:"Recruitment & HR",s:"Automated candidate screening, AI-driven hiring",sc:3,v:"hr"},
     {t:"Critical Infrastructure",s:"Energy, water, transport or safety-critical operations",sc:3,v:"infra"},
     {t:"Healthcare or MedTech",s:"Patient diagnostics, clinical AI, medical devices",sc:2,v:"health"},
-    {t:"Other UK listed company",s:"FTSE All-Share, AIM or equivalent",sc:1,v:"other"}]},
+    {t:"Other listed company",s:"Listed entity outside the above sectors",sc:1,v:"other"}]},
+  {cat:"Jurisdiction",q:"Where are your primary board appointments registered?",sub:"The EU AI Act applies globally to companies with EU market exposure. Your jurisdiction determines the personal liability standard that runs alongside it.",flag:"juris",
+   opts:[
+    {t:"United Kingdom",s:"Companies Act 2006 s.174 — Re Barings personal duty standard",sc:0,v:"uk"},
+    {t:"United States / Canada",s:"Delaware Caremark standard — board-level oversight obligation",sc:0,v:"us"},
+    {t:"Australia / New Zealand",s:"ASIC v Healey / Centro — individual director technical diligence standard",sc:0,v:"aus"},
+    {t:"Middle East / ADGM",s:"ADGM Companies Regulations 2015 — English common law equivalent",sc:0,v:"adgm"},
+    {t:"Multiple jurisdictions",s:"Cross-border board portfolio — multiple liability standards apply simultaneously",sc:1,v:"multi"}]},
   {cat:"Committee Accountability",q:"Do you sit on a board committee with direct oversight of technology, risk or audit?",sub:"Committee membership shapes the personal standard of care courts will apply to you.",flag:"committee",
    opts:[
     {t:"Audit Committee",s:"Financial controls and systems material to reporting",sc:3,v:"audit"},
@@ -216,7 +234,7 @@ const Qs=[
     {t:"Yes — in internal operations only",s:"Back-office automation, internal tooling, HR systems",sc:2,v:"int"},
     {t:"I'm not certain",s:"I haven't personally verified the AI systems currently in use",sc:3,v:"unc"},
     {t:"No AI systems deployed",s:"To my knowledge, no material AI or automated decision-making is in use",sc:0,v:"no"}]},
-  {cat:"Personal Evidence",q:"Could you produce personal, timestamped evidence of AI governance questions you have raised — held independently of company systems?",sub:"Board minutes record collective decisions. Courts require evidence of your individual conduct as a director.",flag:"records",
+  {cat:"Personal Evidence",q:"Could you produce personal, timestamped evidence of AI governance questions you have raised — held independently of company systems?",sub:"Courts require evidence of your individual conduct as a director — not collective board decisions.",flag:"records",
    opts:[
     {t:"Yes — in personal records outside company systems",s:"Independent of board portals, company email servers or IT",sc:0,v:"yes"},
     {t:"Yes — but only through company board portals or minutes",s:"Records held in company-controlled systems",sc:3,v:"co"},
@@ -233,7 +251,7 @@ const Qs=[
     {t:"Yes — I hold personal records independently",s:"Outside company systems, fully portable on resignation",sc:0,v:"yes"},
     {t:"No — I would lose access to board portal records",s:"Company-controlled; access revoked on departure",sc:3,v:"no"},
     {t:"I'm not certain what I would retain",s:"I haven't considered the implications of record loss on resignation",sc:3,v:"unc"}]},
-  {cat:"Regulatory Preparedness",q:"The EU AI Act becomes fully enforceable on 2 August 2026. How would you describe your personal preparation?",sub:"Not your company's preparation — your personal position as an individual director with a duty to exercise reasonable care, skill and diligence.",flag:"prep",
+  {cat:"Regulatory Preparedness",q:"The EU AI Act's Annex III obligations become enforceable on 2 August 2026. How would you describe your personal preparation?",sub:"Not your company's preparation — your personal position as an individual director.",flag:"prep",
    opts:[
     {t:"Personally prepared with independent documented evidence",s:"I have a personal contemporaneous record of my oversight activity",sc:0,v:"ready"},
     {t:"Aware of the deadline, but not confident in my personal position",s:"No structured personal evidence trail currently in place",sc:2,v:"aware"},
@@ -245,42 +263,78 @@ const Qs=[
     {t:"Yes — through company board portals or formal minutes only",s:"Company-controlled; potentially inaccessible after departure",sc:2,v:"yc"},
     {t:"Verbally, in the course of board discussions",s:"Not documented, not timestamped, not independently verifiable",sc:3,v:"verb"},
     {t:"No",s:"No documented AI governance questions in the past 12 months",sc:3,v:"no"}]},
-  {cat:"Role &amp; Board Portfolio",q:"Which best describes your current board role and the number of appointments you hold?",sub:"Your role type and the number of appointments both shape the scope of your personal oversight obligation.",flag:"boards",
+  {cat:"Role & Board Portfolio",q:"Which best describes your current board role and the number of appointments you hold?",sub:"Your role type and the number of appointments both shape the scope of your personal oversight obligation.",flag:"boards",
    opts:[
     {t:"Executive director — one company",s:"CEO, CFO, COO or equivalent with single board responsibility",sc:1,v:"exec_one"},
     {t:"Executive director — multiple boards",s:"Executive role across group subsidiaries or multiple entities",sc:2,v:"exec_multi"},
     {t:"Non-executive director (NED) — one board",s:"Independent or non-executive board member at a single company",sc:1,v:"ned_one"},
     {t:"NED — two boards",s:"Non-executive appointments across two separate companies",sc:2,v:"ned_two"},
-    {t:"NED — three or more boards",s:"Portfolio NED across multiple companies, sectors or jurisdictions",sc:3,v:"ned_three"}]},
-  {cat:"Derivative Claim Readiness",q:"In the event of a shareholder derivative claim arising from an AI governance failure, what personal contemporaneous evidence could you present?",sub:"Courts favour contemporaneous documentary evidence over reconstructed witness accounts. Evidence created after the fact carries significantly less weight.",flag:"derivative",
-   opts:[
-    {t:"Comprehensive personal records, independent of company systems",s:"Timestamped, independently held, verifiable",sc:0,v:"comp"},
-    {t:"Board minutes and company portal records",s:"Company-controlled — access revocable on resignation",sc:3,v:"co"},
-    {t:"Limited informal documentation",s:"Emails or notes — not structured or independently verifiable",sc:3,v:"lim"},
-    {t:"None",s:"No personal contemporaneous evidence of AI governance oversight",sc:3,v:"none"}]}
+    {t:"NED — three or more boards",s:"Portfolio NED across multiple companies, sectors or jurisdictions",sc:3,v:"ned_three"}]}
 ];
 
 const GAPS={
   records:{t:"No independent personal evidence record",d:"Courts require proof of your individual conduct, not collective board decisions. Without an independent contemporaneous record, you cannot demonstrate what you personally did to discharge your duty of care.",sev:"c"},
   portability:{t:"Governance records don't survive resignation",d:"Your board portal records are company property. On resignation, access is revoked — but regulatory investigations routinely begin years after a director has left.",sev:"c"},
-  do:{t:"Side A D&O AI coverage not confirmed in writing",d:"Major insurers are filing AI exclusions on Side A personal policies. Without written confirmation from your insurer, your personal financial coverage in the event of an AI governance claim is unverified.",sev:"c"},
-  documented:{t:"No documented AI oversight questions on record",d:"Verbal questions in board meetings leave no legal trace. Without documented questions and recorded responses, you have no evidence that you exercised personal oversight — and no ability to shift the burden of proof.",sev:"h"},
+  do:{t:"Side A D&O AI coverage not confirmed in writing",d:"Major insurers are filing AI exclusions on Side A personal policies. Without written confirmation, your personal financial coverage in the event of an AI governance claim is unverified.",sev:"c"},
+  documented:{t:"No documented AI oversight questions on record",d:"Verbal questions in board meetings leave no legal trace. Without documented questions and recorded responses, you have no evidence that you exercised personal oversight.",sev:"h"},
   prep:{t:"No personal preparation for August 2 enforcement",d:"Relying on the company's compliance programme does not discharge your personal duty of care as an individual director. The standard requires your own independent evidence of oversight.",sev:"h"},
-  boards:{t:"Multi-appointment exposure: compounding personal liability",d:"Every directorship — executive or non-executive — carries an independent personal duty of care. Portfolio NEDs and multi-board executives face compounding evidence requirements across different companies, AI systems and regulatory environments simultaneously.",sev:"h"},
-  ai:{t:"AI systems deployed — personal oversight duty active",d:"The moment AI is deployed in material processes, your personal oversight duty is engaged. The question is whether you have evidence that you discharged it.",sev:"h"},
-  derivative:{t:"Insufficient personal evidence for a derivative claim defence",d:"Without a contemporaneous personal record independent of company systems, your defence in a shareholder derivative claim rests on reconstructed accounts — which courts treat as significantly less reliable than records created at the time.",sev:"c"}
+  boards:{t:"Multi-appointment exposure: compounding personal liability",d:"Every directorship carries an independent personal duty of care. Portfolio NEDs and multi-board executives face compounding evidence requirements across different companies, AI systems and regulatory environments.",sev:"h"},
+  ai:{t:"AI systems deployed — personal oversight duty active",d:"The moment AI is deployed in material processes, your personal oversight duty is engaged. The question is whether you have evidence that you discharged it.",sev:"h"}
+};
+
+const JURIS={
+  uk:{
+    label:"United Kingdom",
+    cases:[
+      {title:"Companies Act 2006 Section 174 — Personal duty of care, skill and diligence",body:"Your personal liability standard. The duty is individual — it cannot be discharged by board minutes, collective decisions, or reliance on management."},
+      {title:"Re Barings plc (No 5) [1999]",body:"Established that directors cannot rely on collective board oversight or management to discharge individual duty. Each director must personally demonstrate what they did."},
+      {title:"Gestmin SGPS SA v Credit Suisse [2013]",body:"Courts prefer contemporaneous documentary evidence over reconstructed witness accounts. A memory of what you asked is not evidence. A timestamped record of what you asked is."}
+    ]
+  },
+  us:{
+    label:"United States / Delaware",
+    cases:[
+      {title:"Delaware Caremark Standard — In re Caremark International Inc. [1996]",body:"Directors have a personal obligation to implement and monitor board-level oversight systems. Failure to do so — not just bad outcomes — creates individual liability exposure."},
+      {title:"Marchand v Barnhill [2019]",body:"Updated the Caremark standard. Directors must not only have oversight systems but must demonstrate active monitoring. Documented questions to management are evidence of that monitoring."},
+      {title:"SEC AI Governance Priority FY2026",body:"The SEC has named AI governance as a top examination priority for FY2026. Personal director oversight documentation is increasingly relevant to SEC enforcement inquiries."}
+    ]
+  },
+  aus:{
+    label:"Australia / New Zealand",
+    cases:[
+      {title:"Corporations Act 2001 Section 180 — Duty of care and diligence",body:"Australian directors carry a personal duty of care equivalent to the UK standard. The duty is individual and requires active engagement with material business risks."},
+      {title:"ASIC v Healey (Centro) [2011]",body:"Individual directors cannot rely on management or advisors to discharge personal technical diligence obligations. Each director must personally understand material risks — including AI systems."},
+      {title:"AICD Director Standards",body:"The Australian Institute of Company Directors has 50,000 members and has flagged AI governance as a primary personal liability concern for FY2026."}
+    ]
+  },
+  adgm:{
+    label:"Middle East / ADGM",
+    cases:[
+      {title:"ADGM Companies Regulations 2015 — English common law equivalent",body:"ADGM operates under English common law. The personal director liability standard mirrors the UK Companies Act — individual duty of care, not collective board protection."},
+      {title:"CBUAE AI Governance Guidance — February 2026",body:"The Central Bank of the UAE published AI governance guidance in February 2026, creating a regulatory expectation of personal director oversight in financial services across the Gulf."},
+      {title:"Cross-border EU AI Act exposure",body:"Directors on ADGM-registered boards whose companies operate in or serve EU markets remain subject to Annex III obligations — personal oversight duty applies regardless of where the board is registered."}
+    ]
+  },
+  multi:{
+    label:"Multiple jurisdictions",
+    cases:[
+      {title:"Compounding personal liability across jurisdictions",body:"Each jurisdiction carries an independent personal liability standard. A portfolio director with UK, US and Australian appointments faces three simultaneous and independent evidence requirements — and a failure in any one jurisdiction does not protect against claims in another."},
+      {title:"No single compliance programme is sufficient",body:"A company compliance programme in one jurisdiction does not discharge your personal duty in another. Each board requires independent personal evidence of your oversight activity."},
+      {title:"EU AI Act applies regardless of board registration",body:"Annex III obligations attach to companies with EU market exposure — not just EU-registered entities. Directors on boards outside the EU whose companies serve EU markets are in scope from 2 August 2026."}
+    ]
+  }
 };
 
 const SECTOR_NOTES={
-  finserv:"Financial Services directors carry Annex III §5 exposure across credit scoring, insurance pricing and fraud detection — the highest-exposure AI Act categories, where regulator enforcement attention is already concentrated.",
-  hr:"Recruitment and HR directors face Annex III §4 obligations in relation to automated candidate screening and AI-driven employment decisions — a category under active regulatory focus across the UK and EU.",
+  finserv:"Financial Services directors carry Annex III §5 exposure across credit scoring, insurance pricing and fraud detection — among the highest-exposure AI Act categories, where regulator enforcement attention is already concentrated.",
+  hr:"Recruitment and HR directors face Annex III §4 obligations in relation to automated candidate screening and AI-driven employment decisions — a category under active regulatory focus.",
   infra:"Critical infrastructure directors carry Annex III §2 obligations in relation to safety-critical AI systems across energy, water and transport. The personal oversight standard in this category is among the most demanding in the Regulation.",
   health:"Healthcare and MedTech directors face overlapping obligations under both the EU AI Act and existing medical device regulation. Personal oversight of high-risk AI systems in clinical settings carries compound liability exposure.",
   other:"Even outside the highest-exposure sectors, any director whose company deploys AI in material processes carries a personal oversight obligation that board minutes and company compliance frameworks alone cannot satisfy.",
-  default:"Every director on a board that deploys AI in any material process carries a personal oversight obligation under Companies Act 2006 Section 174. The EU AI Act enforcement architecture makes that obligation directly enforceable from August 2026."
+  default:"Every director on a board that deploys AI in any material process carries a personal oversight obligation. The EU AI Act enforcement architecture makes that obligation directly enforceable from August 2026."
 };
 
-let cur=0,score=0,flags=[],sectorVal="default";
+let cur=0,score=0,flags=[],jurisVal='uk',sectorVal='default';
 
 function go(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
@@ -297,7 +351,7 @@ function render(i){
   document.getElementById('qsub').textContent=q.sub;
   const c=document.getElementById('qopts');
   c.innerHTML='';
-  q.opts.forEach((o,ai)=>{
+  q.opts.forEach(o=>{
     const b=document.createElement('button');
     b.className='opt';
     b.innerHTML=`<div class="opt-radio"></div><div><div class="opt-t">${o.t}</div>${o.s?`<div class="opt-s">${o.s}</div>`:''}</div>`;
@@ -312,7 +366,9 @@ function pick(qi,o,btn){
   score+=o.sc;
   const q=Qs[qi];
   if(o.sc>=2&&!flags.includes(q.flag)) flags.push(q.flag);
+  if(q.flag==='juris') jurisVal=o.v;
   if(q.flag==='sector') sectorVal=o.v;
+  if(q.flag==='boards'&&(o.v==='ned_three'||o.v==='exec_multi'||o.v==='ned_two')) flags.push('boards');
   setTimeout(()=>{
     if(qi<9){cur=qi+1;render(cur);}
     else process();
@@ -330,12 +386,12 @@ function process(){
 }
 
 function results(){
-  const max=30,pct=Math.round(score/max*100);
+  const max=31,pct=Math.round(score/max*100);
   let cls,head,sum;
-  if(pct>=75){cls='rc';head='Critical Personal Exposure';sum='Your assessment indicates severe gaps across multiple dimensions of personal liability. Without independent contemporaneous evidence, a documented oversight record, or confirmed D&O coverage, your position under an EU AI Act-triggered derivative claim is significantly exposed.';}
-  else if(pct>=50){cls='rh';head='High Personal Exposure';sum='Significant gaps exist between your current position and the personal evidence standard that courts require from individual directors. The August 2 enforcement date is a fixed deadline — the gaps identified below require attention before it arrives.';}
-  else if(pct>=25){cls='rm';head='Moderate Personal Exposure';sum='Some protections may be in place, but material gaps remain in your personal evidentiary position. The areas identified below carry real personal liability risk that the company\'s compliance programme alone cannot address.';}
-  else{cls='rl';head='Lower Exposure — but gaps remain';sum='Your personal position is stronger than most directors. The specific gaps identified below still warrant attention. August 2 is not a soft deadline.';}
+  if(pct>=75){cls='rc';head='Critical Personal Exposure';sum='Your assessment indicates severe gaps across multiple dimensions of personal liability. Without independent contemporaneous evidence, a documented oversight record, or confirmed D&O coverage, your position under an EU AI Act-triggered claim is significantly exposed.';}
+  else if(pct>=50){cls='rh';head='High Personal Exposure';sum='Significant gaps exist between your current position and the personal evidence standard that courts require from individual directors. The gaps identified below require attention before the August 2 enforcement date.';}
+  else if(pct>=25){cls='rm';head='Moderate Personal Exposure';sum='Some protections may be in place, but material gaps remain in your personal evidentiary position. The areas identified below carry real personal liability risk that a company compliance programme alone cannot address.';}
+  else{cls='rl';head='Lower Exposure — but gaps remain';sum='Your personal position is stronger than most directors. The specific gaps identified below still warrant attention before the August 2 enforcement date.';}
 
   document.getElementById('sring').className='score-ring '+cls;
   document.getElementById('snum').textContent=pct;
@@ -344,7 +400,7 @@ function results(){
 
   const gl=document.getElementById('glist');
   gl.innerHTML='';
-  const show=flags.length?flags.slice(0,4):['prep','documented'];
+  const show=flags.length?[...new Set(flags)].slice(0,4):['prep','documented'];
   show.forEach(f=>{
     const g=GAPS[f];if(!g)return;
     const d=document.createElement('div');
@@ -353,41 +409,44 @@ function results(){
     gl.appendChild(d);
   });
 
-  const sn=document.getElementById('sector-note')||null;
-  const note=SECTOR_NOTES[sectorVal]||SECTOR_NOTES.default;
+  // Jurisdiction box
+  const jd=JURIS[jurisVal]||JURIS.uk;
+  const jbox=document.getElementById('juris-box');
+  jbox.innerHTML=`<div class="juris-label">${jd.label}</div>`+
+    jd.cases.map(c=>`<div class="juris-case"><strong>${c.title}</strong><br>${c.body}</div>`).join('');
 
   const ctaHead=document.getElementById('cta-head');
   const ctaBody=document.getElementById('cta-body');
-  const ctaLink=document.getElementById('cta-link');
-
   if(pct>=75){
     ctaHead.textContent='Your exposure is significant. A personal briefing is available.';
-    ctaBody.textContent='A director in your position has multiple compounding gaps in their personal liability protection. There is a purpose-built response to the specific gaps your assessment has identified. Request a personal briefing to understand what it covers and whether it is right for you.';
+    ctaBody.textContent='Your assessment has identified multiple compounding gaps in your personal liability protection. A purpose-built response exists for directors in your position. Request a personal briefing to understand what it covers and whether it is right for you.';
   } else if(pct>=50){
     ctaHead.textContent='The gaps identified here have a direct solution.';
     ctaBody.textContent='The personal evidence gaps your assessment has surfaced are specific and addressable. A purpose-built approach exists for directors in your position. Request a briefing to understand how it works.';
   } else {
     ctaHead.textContent='Even a lower score warrants a conversation.';
-    ctaBody.textContent='The gaps your assessment identified — even at this level — represent real personal liability risk in the context of the August 2 enforcement date. A personal briefing is available to walk through the specific protections relevant to your position.';
+    ctaBody.textContent='The gaps your assessment identified represent real personal liability risk in the context of the August 2 enforcement date. A personal briefing is available to walk through the specific protections relevant to your position.';
   }
 
-  const sub=encodeURIComponent('EU AI Act Director Liability Assessment — Request for Personal Briefing');
-  const body=encodeURIComponent('I have completed the EU AI Act Director Personal Liability Assessment and would like to request a personal briefing to understand how the identified gaps can be addressed.\n\nMy assessed risk level: '+head+'.\n\nPlease arrange a convenient time.');
-  // ← Paste your Google Calendar booking URL below
-  const calendarUrl = 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2TbybaflMMCZ2SjKK6GsaBvqLBduaSo0KW2poGgjQbh-qNl-DWrN_9c-i7Ke0w0zuF8Tdn1DMW';
-  ctaLink.href = calendarUrl;
-  ctaLink.target = '_blank';
-  ctaLink.rel = 'noopener';
+  // Disclaimer
+  const jurisDisclaimer={
+    uk:'UK: Companies Act 2006 s.174 and Re Barings plc (No 5) [1999].',
+    us:'US/Delaware: Caremark standard and Marchand v Barnhill [2019].',
+    aus:'Australia: Corporations Act 2001 s.180 and ASIC v Healey [2011].',
+    adgm:'ADGM: Companies Regulations 2015 and CBUAE AI Governance Guidance February 2026.',
+    multi:'Multiple jurisdictions: independent liability standards apply in each.'
+  };
+  document.getElementById('disclaimer').innerHTML=
+    `The 2 August 2026 deadline applies to Annex III high-risk AI systems. Article 6(1) product-safety AI (Annex I regulated products) follows on 2 August 2027.<br>Applicable standard — ${jurisDisclaimer[jurisVal]||jurisDisclaimer.uk}<br><br>This assessment is for general awareness only. It does not constitute legal advice. Consult a qualified solicitor for guidance specific to your personal position.`;
 
   go('s-results');
 }
 
 function retake(){
-  cur=0;score=0;flags=[];sectorVal="default";
+  cur=0;score=0;flags=[];jurisVal='uk';sectorVal='default';
   go('s-land');
 }
 
-// countdown
 const enforce=new Date('2026-08-02');
 const diff=Math.ceil((enforce-new Date())/(1000*60*60*24));
 document.getElementById('dcount').textContent=Math.max(0,diff);
