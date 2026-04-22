@@ -149,9 +149,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   .res-row{flex-direction:column;align-items:flex-start}
 }
 </style>
-
+ 
 <div id="app">
-
+ 
 <div id="s-land" class="screen active">
   <div class="hero">
     <div class="badge"><div class="dot"></div><span id="dcount">117</span> days to Annex III enforcement · EU AI Act · 2 August 2026</div>
@@ -168,7 +168,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="hero-note">For executive directors, NEDs and board members · UK · US · Australia · Middle East · Anonymous · No data stored · 2–3 minutes</div>
   </div>
 </div>
-
+ 
 <div id="s-questions" class="screen">
   <div class="q-wrap">
     <div class="q-prog">
@@ -186,7 +186,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="q-opts" id="qopts"></div>
   </div>
 </div>
-
+ 
 <div id="s-proc" class="screen">
   <div class="processing">
     <div class="spinner"></div>
@@ -201,7 +201,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     </ul>
   </div>
 </div>
-
+ 
 <div id="s-results" class="screen">
   <div style="border-radius:16px;overflow:hidden;">
     <div class="res-top">
@@ -211,7 +211,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       </div>
     </div>
     <div class="res-body">
-      <div class="sec-lbl">Your identified exposure gaps</div>
+      <div class="sec-lbl">Based on your responses, you have indicated the following about your current governance position:</div>
       <div class="gap-list" id="glist"></div>
       <div class="divider"></div>
       <div class="sec-lbl">Your jurisdiction — applicable legal standard</div>
@@ -227,9 +227,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     </div>
   </div>
 </div>
-
+ 
 </div>
-
+ 
 <script>
 const Qs=[
   {cat:"Sector Exposure",q:"Which sector does your primary board appointment fall within?",sub:"Annex III of the EU AI Act defines the high-risk categories enforceable from 2 August 2026. Your sector determines your exposure profile.",flag:"sector",
@@ -295,17 +295,17 @@ const Qs=[
     {t:"NED — two boards",s:"Non-executive appointments across two separate companies",sc:2,v:"ned_two"},
     {t:"NED — three or more boards",s:"Portfolio NED across multiple companies, sectors or jurisdictions",sc:3,v:"ned_three"}]}
 ];
-
+ 
 const GAPS={
-  records:{t:"No independent personal evidence record",d:"Courts require proof of your individual conduct, not collective board decisions. Without an independent contemporaneous record, you cannot demonstrate what you personally did to discharge your duty of care.",sev:"c"},
-  portability:{t:"Governance records don't survive resignation",d:"Your board portal records are company property. On resignation, access is revoked — but regulatory investigations routinely begin years after a director has left.",sev:"c"},
-  do:{t:"Side A D&O AI coverage not confirmed in writing",d:"Major insurers are filing AI exclusions on Side A personal policies. Without written confirmation, your personal financial coverage in the event of an AI governance claim is unverified.",sev:"c"},
-  documented:{t:"No documented AI oversight questions on record",d:"Verbal questions in board meetings leave no legal trace. Without documented questions and recorded responses, you have no evidence that you exercised personal oversight.",sev:"h"},
-  prep:{t:"No personal preparation for August 2 enforcement",d:"Relying on the company's compliance programme does not discharge your personal duty of care as an individual director. The standard requires your own independent evidence of oversight.",sev:"h"},
-  boards:{t:"Multi-appointment exposure: compounding personal liability",d:"Every directorship carries an independent personal duty of care. Portfolio NEDs and multi-board executives face compounding evidence requirements across different companies, AI systems and regulatory environments.",sev:"h"},
-  ai:{t:"AI systems deployed — personal oversight duty active",d:"The moment AI is deployed in material processes, your personal oversight duty is engaged. The question is whether you have evidence that you discharged it.",sev:"h"}
+  records:{t:"You have indicated you have no independent personal record of AI governance questions raised at board level",d:"Under Companies Act 2006 s.174 and Re Barings plc (No 5) [1999], directors must personally demonstrate what they did. Courts assign substantially less weight to memory than to contemporaneous records created at the time.",sev:"c"},
+  portability:{t:"You have indicated that your governance records would not survive your resignation",d:"Board portal records are company property. Access is typically revoked on resignation — but your personal liability does not leave with you. Regulatory investigations routinely begin years after a director has left.",sev:"c"},
+  do:{t:"You have indicated you have not confirmed whether your D&O policy covers AI governance derivative claims",d:"Major insurers are filing AI exclusions on Side A personal policies. Without written confirmation, your personal financial coverage in the event of an AI governance claim is unverified.",sev:"c"},
+  documented:{t:"You have indicated you have no documented record of AI oversight questions asked and responses received",d:"Verbal questions in board meetings leave no legal trace. Without documented questions and recorded responses, there is no personal evidentiary record of oversight activity.",sev:"h"},
+  prep:{t:"You have indicated you have taken no independent personal steps to prepare for the August 2, 2026 enforcement date",d:"A company compliance programme does not discharge your personal duty of care as an individual director. The personal liability standard under s.174 requires your own independent evidence of oversight.",sev:"h"},
+  boards:{t:"You have indicated you hold multiple board appointments — each carrying an independent personal duty",d:"Every directorship carries an independent personal duty of care. Portfolio NEDs and multi-board executives face compounding evidence requirements across different companies, AI systems and regulatory environments.",sev:"h"},
+  ai:{t:"You have indicated your company deploys AI in material processes — engaging your personal oversight duty",d:"The moment AI is deployed in material processes, the personal oversight duty under s.174 is engaged. The question courts ask is whether you have evidence that you discharged it.",sev:"h"}
 };
-
+ 
 const JURIS={
   uk:{
     label:"United Kingdom",
@@ -348,7 +348,7 @@ const JURIS={
     ]
   }
 };
-
+ 
 const SECTOR_NOTES={
   finserv:"Financial Services directors carry Annex III §5 exposure across credit scoring, insurance pricing and fraud detection — among the highest-exposure AI Act categories, where regulator enforcement attention is already concentrated.",
   hr:"Recruitment and HR directors face Annex III §4 obligations in relation to automated candidate screening and AI-driven employment decisions — a category under active regulatory focus.",
@@ -357,15 +357,15 @@ const SECTOR_NOTES={
   other:"Even outside the highest-exposure sectors, any director whose company deploys AI in material processes carries a personal oversight obligation that board minutes and company compliance frameworks alone cannot satisfy.",
   default:"Every director on a board that deploys AI in any material process carries a personal oversight obligation. The EU AI Act enforcement architecture makes that obligation directly enforceable from August 2026."
 };
-
+ 
 let cur=0,score=0,flags=[],jurisVal='uk',sectorVal='default';
-
+ 
 function go(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
-
+ 
 function render(i){
   const q=Qs[i];
   document.getElementById('qn').textContent=(i+1)+' / 10';
@@ -383,7 +383,7 @@ function render(i){
     c.appendChild(b);
   });
 }
-
+ 
 function pick(qi,o,btn){
   document.querySelectorAll('.opt').forEach(b=>b.classList.remove('sel'));
   btn.classList.add('sel');
@@ -398,7 +398,7 @@ function pick(qi,o,btn){
     else process();
   },340);
 }
-
+ 
 function process(){
   go('s-proc');
   const steps=document.querySelectorAll('#psteps li');
@@ -408,20 +408,20 @@ function process(){
     else{clearInterval(iv);setTimeout(results,400);}
   },580);
 }
-
+ 
 function results(){
   const max=31,pct=Math.round(score/max*100);
   let cls,head,sum;
-  if(pct>=75){cls='rc';head='Critical Personal Exposure';sum='Your assessment indicates severe gaps across multiple dimensions of personal liability. Without independent contemporaneous evidence, a documented oversight record, or confirmed D&O coverage, your position under an EU AI Act-triggered claim is significantly exposed.';}
-  else if(pct>=50){cls='rh';head='High Personal Exposure';sum='Significant gaps exist between your current position and the personal evidence standard that courts require from individual directors. The gaps identified below require attention before the August 2 enforcement date.';}
-  else if(pct>=25){cls='rm';head='Moderate Personal Exposure';sum='Some protections may be in place, but material gaps remain in your personal evidentiary position. The areas identified below carry real personal liability risk that a company compliance programme alone cannot address.';}
-  else{cls='rl';head='Lower Exposure — but gaps remain';sum='Your personal position is stronger than most directors. The specific gaps identified below still warrant attention before the August 2 enforcement date.';}
-
+  if(pct>=75){cls='rc';head='Your Self-Assessment Summary';sum='Based on your responses, you have indicated multiple significant gaps in your personal governance evidence position. The personal liability standard under Companies Act 2006 s.174 applies to directors in this position. The factors you have identified represent gaps in your personal evidentiary record in the context of the August 2, 2026 enforcement deadline.';}
+  else if(pct>=50){cls='rh';head='Your Self-Assessment Summary';sum='Based on your responses, you have indicated material gaps between your current position and the personal evidence standard that courts require from individual directors. The factors you have identified below represent gaps in your personal evidentiary position in the context of the August 2, 2026 enforcement deadline.';}
+  else if(pct>=25){cls='rm';head='Your Self-Assessment Summary';sum='Based on your responses, you have indicated some gaps in your personal governance evidence position. The areas you have identified below carry personal liability considerations that a company compliance programme alone cannot address.';}
+  else{cls='rl';head='Your Self-Assessment Summary';sum='Based on your responses, you have indicated a relatively stronger personal governance position than many directors. The specific gaps you have identified below still warrant attention before the August 2, 2026 enforcement deadline.';}
+ 
   document.getElementById('sring').className='score-ring '+cls;
   document.getElementById('snum').textContent=pct;
   document.getElementById('rhead').textContent=head;
   document.getElementById('rsum').textContent=sum;
-
+ 
   const gl=document.getElementById('glist');
   gl.innerHTML='';
   const show=flags.length?[...new Set(flags)].slice(0,4):['prep','documented'];
@@ -432,25 +432,25 @@ function results(){
     d.innerHTML=`<div class="gap-ico">${g.sev==='c'?'⚠':'◉'}</div><div><div class="gap-t">${g.t}</div><div class="gap-d">${g.d}</div></div>`;
     gl.appendChild(d);
   });
-
+ 
   const jd=JURIS[jurisVal]||JURIS.uk;
   const jbox=document.getElementById('juris-box');
   jbox.innerHTML=`<div class="juris-label">${jd.label}</div>`+
     jd.cases.map(c=>`<div class="juris-case"><strong>${c.title}</strong><br>${c.body}</div>`).join('');
-
+ 
   const ctaHead=document.getElementById('cta-head');
   const ctaBody=document.getElementById('cta-body');
   if(pct>=75){
-    ctaHead.textContent='Your exposure is significant. A personal briefing is available.';
-    ctaBody.textContent='Your assessment has identified multiple compounding gaps in your personal liability protection. A purpose-built response exists for directors in your position. Request a personal briefing to understand what it covers and whether it is right for you.';
+    ctaHead.textContent='The personal liability standard under s.174 applies to directors in your position.';
+    ctaBody.textContent='The factors you have identified above represent significant gaps in your personal evidentiary position in the context of the August 2, 2026 enforcement deadline. Directors who have identified these gaps are invited to explore the personal protections available.';
   } else if(pct>=50){
-    ctaHead.textContent='The gaps identified here have a direct solution.';
-    ctaBody.textContent='The personal evidence gaps your assessment has surfaced are specific and addressable. A purpose-built approach exists for directors in your position. Request a briefing to understand how it works.';
+    ctaHead.textContent='The factors you have identified represent gaps in your personal evidentiary position.';
+    ctaBody.textContent='The personal liability standard under s.174 applies to all directors regardless of board decisions. Directors who have identified these gaps are invited to explore the personal protections available.';
   } else {
-    ctaHead.textContent='Even a lower score warrants a conversation.';
-    ctaBody.textContent='The gaps your assessment identified represent real personal liability risk in the context of the August 2 enforcement date. A personal briefing is available to walk through the specific protections relevant to your position.';
+    ctaHead.textContent='The gaps you have identified still warrant attention before August 2, 2026.';
+    ctaBody.textContent='Even where some protections are in place, the personal liability standard under s.174 applies to all directors. Directors who have identified any gaps are invited to explore the personal protections available.';
   }
-
+ 
   const jurisDisclaimer={
     uk:'UK: Companies Act 2006 s.174 and Re Barings plc (No 5) [1999].',
     us:'US/Delaware: Caremark standard and Marchand v Barnhill [2019].',
@@ -459,16 +459,16 @@ function results(){
     multi:'Multiple jurisdictions: independent liability standards apply in each.'
   };
   document.getElementById('disclaimer').innerHTML=
-    `The 2 August 2026 deadline applies to Annex III high-risk AI systems. Article 6(1) product-safety AI (Annex I regulated products) follows on 2 August 2027.<br>Applicable standard — ${jurisDisclaimer[jurisVal]||jurisDisclaimer.uk}<br><br>This assessment is for general awareness only. It does not constitute legal advice. Consult a qualified solicitor for guidance specific to your personal position.`;
-
+    `The 2 August 2026 deadline applies to Annex III high-risk AI systems. Article 6(1) product-safety AI (Annex I regulated products) follows on 2 August 2027.<br>Applicable standard — ${jurisDisclaimer[jurisVal]||jurisDisclaimer.uk}<br><br>This tool is AI-generated and reflects your own responses back through a structured regulatory framework. It does not constitute legal advice and makes no determination about your personal legal position. The personal liability standard under Companies Act 2006 s.174 applies to all directors regardless of the outputs of this tool. Consult a qualified solicitor for guidance specific to your circumstances.`;
+ 
   go('s-results');
 }
-
+ 
 function retake(){
   cur=0;score=0;flags=[];jurisVal='uk';sectorVal='default';
   go('s-land');
 }
-
+ 
 const enforce=new Date('2026-08-02');
 const diff=Math.ceil((enforce-new Date())/(1000*60*60*24));
 document.getElementById('dcount').textContent=Math.max(0,diff);
